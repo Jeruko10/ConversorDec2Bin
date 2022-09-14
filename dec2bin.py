@@ -7,10 +7,15 @@
 # ------------------------------------------------------
 def dec2bin(numero_decimal, numero_bits):
     numero_binario = bin(numero_decimal)
-    numero_binario = numero_binario[2:len(numero_binario)]  # quita el "0b" del principio
+    if numero_decimal >= 0:
+        numero_binario = numero_binario[2:len(numero_binario)]  #Quita el "0b" del principio
     
-    while len(numero_binario) < numero_bits:      # añade 0's a la izquierda si hace falta
-        numero_binario = "0" + numero_binario
+        while len(numero_binario) < numero_bits:      #Añade 0's a la izquierda si hace falta
+            numero_binario = "0" + numero_binario
+    else:
+        numero_binario = numero_binario[3:len(numero_binario)]  #Vuelve a quitar el comienzo innecesario
+        while len(numero_binario) < numero_bits:
+            numero_binario = "1" + numero_binario  #Apila unos delante para cumplir con el número de bits pedidos
     return numero_binario
 
 # ----------------------------------------
