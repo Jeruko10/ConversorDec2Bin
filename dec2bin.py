@@ -7,7 +7,7 @@
 # ------------------------------------------------------
 def dec2bin(numero_decimal, numero_bits):
     numero_binario = bin(numero_decimal)
-    if numero_decimal >= 0
+    if numero_decimal >= 0:  #Los dos puntos! IMPORTANTE!
         numero_binario = numero_binario[2:len(numero_binario)]  #Quita el "0b" del principio
     
         while len(numero_binario) < numero_bits:      #Añade 0's a la izquierda si hace falta
